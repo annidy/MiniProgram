@@ -34,12 +34,33 @@
   justify-content: space-between;
 }
 
+.t1u3d .pusher-box-bottom {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  top: 50vh;
+  left: 0;
+  width: 100vw;
+  height: calc(100vw * 9/16);
+  margin-bottom: 1vw;
+}
+
 .t1u3d .player-box .player-item,
 .t1u3d .player-box .pusher-item {
   position: relative;
   overflow: hidden;
   flex: 1;
   height: calc((100vw/3 - 2vw/3)* 4/3);
+  text-align: center;
+  vertical-align: top;
+}
+
+.t1u3d .player-box .player-down,
+.t1u3d .player-box .pusher-down {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  height: 200px;
   text-align: center;
   vertical-align: top;
 }

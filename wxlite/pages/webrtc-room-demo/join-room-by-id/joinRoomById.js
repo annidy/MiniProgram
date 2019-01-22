@@ -8,7 +8,7 @@ Page({
 	 */
 	data: {
 		roomName:'',
-		roomNo:'',
+		roomNo:'123',
 		userName: '',
 		tapTime: '',
     template: 'float',

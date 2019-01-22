@@ -39,6 +39,7 @@ Page({
     enableCamera: true,
     headerHeight: app.globalData.headerHeight,
     statusBarHeight: app.globalData.statusBarHeight,
+    moveDown: false
   },
 
   /**
@@ -274,6 +275,14 @@ Page({
     this.setData({
       muted: this.data.muted
     });
+  },
+
+  /**
+   * 重排位置
+   */
+  reorder: function() {
+    var self = this;
+    self.data.webrtcroomComponent.randomLayout();
   },
 
   /**

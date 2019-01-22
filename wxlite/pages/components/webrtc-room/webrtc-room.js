@@ -138,7 +138,7 @@ Component({
     playerVideoStatus: {
 
     },
-
+    moveDown: false,
     ERROR_OPEN_CAMERA: -4, //打开摄像头失败
     ERROR_OPEN_MIC: -5, //打开麦克风失败
     ERROR_PUSH_DISCONNECT: -6, //推流连接断开
@@ -1009,6 +1009,30 @@ Component({
           playerVideoStatus: playerVideoStatus
         })
       }
+    },
+
+
+
+    randomLayout: function() {
+      console.log("随机排列");
+      // const query = wx.createSelectorQuery().in(this);
+      // query.select('#player-item-0').boundingClientRect()
+      // query.exec(function (rect) {
+      //   console.log('exec')
+      //   console.log(rect)
+      //   rect[0].left    // 节点的左边界坐标
+      //   rect[0].right   // 节点的右边界坐标
+      //   rect[0].top     // 节点的上边界坐标
+      //   rect[0].bottom  // 节点的下边界坐标
+      //   rect[0].width   // 节点的宽度
+      //   rect[0].height  // 节点的高度
+      // })
+
+      this.data.moveDown = !this.data.moveDown;
+      console.log('set moveDown'+this.data.moveDown);
+      this.setData({
+        moveDown: this.data.moveDown
+      });
     }
   }
 })
