@@ -289,7 +289,8 @@ Page({
     self.component && self.component.switchCamera();
     self.setData({
       frontCamera: !self.data.frontCamera
-    })
+    });
+    console.log("liveroom changeCamera");
   },
   bindInputMsg: function (e) {
     this.data.inputMsg = e.detail.value;

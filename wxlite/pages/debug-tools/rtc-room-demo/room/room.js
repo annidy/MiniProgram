@@ -17,6 +17,7 @@ Page({
     showExitDialog: false, //控制只显示一个弹框的标志位
     headerHeight: app.globalData.headerHeight,
     statusBarHeight: app.globalData.statusBarHeight,
+    enableCamera: false,
   },
 
   onRoomEvent: function (e) {
@@ -84,7 +85,8 @@ Page({
     }
     this.setData({
       frontCamera: !this.data.frontCamera
-    })
+    });
+    console.log("room.js changeCamera " + this.data.frontCamera);
   },
   setBeauty: function () {
     this.data.beauty = (this.data.beauty == 0 ? 5 : 0);
@@ -103,6 +105,13 @@ Page({
     this.setData({
       debug: this.data.debug
     });
+  },
+  clickCamera: function () {
+    this.data.enableCamera = !this.data.enableCamera;
+    this.setData({
+      enableCamera: this.data.enableCamera
+    });
+    console.log("room.js clickCamera "+this.data.enableCamera);
   },
 
   /**

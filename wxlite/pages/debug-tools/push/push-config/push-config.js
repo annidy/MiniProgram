@@ -11,6 +11,7 @@ Page({
       { value: 'SD', title: 'SD'},
       { value: 'HD', title: 'HD'},
       { value: 'FHD', title: 'FHD'},
+      { value: 'RTC', title: 'RTC'},
     ],
     mode :'SD',
     orientationItems: [
@@ -24,6 +25,7 @@ Page({
     tapTime: '',		// 防止两次点击操作间隔太快
     headerHeight: app.globalData.headerHeight,
     statusBarHeight: app.globalData.statusBarHeight,
+    pushUrl: 'rtmp://5815.livepush.myqcloud.com/live/5815_660bc79090c511e892905cb9018cf0d4?bizid=5815',
   },
 
   onPushInputTap: function () {

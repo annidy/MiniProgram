@@ -8,10 +8,13 @@
   </view>
   <radio-group class="radio-group" bindchange="radioChange">
     <label class="radio">
-      <radio color='#006eff' value="float" checked='true' id="float"/>嵌套布局
+      <radio color='#006eff' value="float" checked='true' id="float"/>float
     </label>
     <label class="radio">
-      <radio color='#006eff' value="grid"  id="grid"/>网格布局
+      <radio color='#006eff' value="1u3d"  id="grid"/>1u3d
+    </label>
+    <label class="radio">
+      <radio color='#006eff' value="grid"  id="grid"/>gird
     </label>
   </radio-group>
   <view class="PrevImgBox">

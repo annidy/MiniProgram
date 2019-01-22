@@ -1,9 +1,9 @@
 {
-	"client": "./wxlite",
-	"svr": "./server",
-	"miniprogramRoot": "./wxlite",
-	"qcloudRoot": "./server",
-	"appid": "xxxxxxxxxxxxx",
+	"client": "wxlite/",
+	"svr": "server/",
+	"miniprogramRoot": "wxlite/",
+	"qcloudRoot": "server/",
+	"appid": "wxc297db62adbdb10c",
 	"projectname": "rtcroom1.2",
 	"setting": {
 		"urlCheck": false,
@@ -13,5 +13,37 @@
 		"newFeature": true
 	},
 	"libVersion": "1.9.91",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "推流",
+					"pathName": "pages/debug-tools/push/push",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "播放",
+					"pathName": "pages/debug-tools/play/play"
+				}
+			]
+		}
+	}
 }

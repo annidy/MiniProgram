@@ -1,5 +1,5 @@
 <view class='container-box'>
-  <rtc-room id="rtcroom" roomID="{{roomID}}" roomInfo="{{roomname}}" template="{{template}}" beauty="{{beauty}}" muted="{{muted}}" debug="{{debug}}" bindonRoomEvent="onRoomEvent">
+  <rtc-room id="rtcroom" roomID="{{roomID}}" roomInfo="{{roomname}}" template="{{template}}" beauty="{{beauty}}" muted="{{muted}}" debug="{{debug}}" bindonRoomEvent="onRoomEvent" enableCamera="{{enableCamera}}">
      <cover-view wx:if="{{template == 'grid'}}" slot="grid" style='height:100%;width:100%;position: absolute;'>
       <cover-view class="operate">
         <cover-view class='img-box'>
@@ -21,7 +21,7 @@
     <cover-view wx:elif="{{template == 'float'}}" slot="float" style='height:100%;width:100%;position: absolute;'>
       <cover-view class="operate">
         <cover-view class='img-box'>
-          <cover-image class='img-view' src='/pages/Resources/camera{{frontCamera?"":"-gray"}}.png' bindtap="changeCamera"></cover-image>
+          <cover-image class='img-view' src='/pages/Resources/camera{{enableCamera?"":"-gray"}}.png' bindtap="clickCamera"></cover-image>
         </cover-view>
         <cover-view class='img-box'>
           <cover-image class='img-view' src='/pages/Resources/{{beauty? "beauty" : "beauty-dis"}}.png' bindtap="setBeauty"></cover-image>

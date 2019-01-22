@@ -246,13 +246,15 @@ Page({
     this.data.webrtcroomComponent.switchCamera();
     this.setData({
       frontCamera: !this.data.frontCamera
-    })
+    });
+    console.log("webrtc-room changeCamera")
   },
-  onEnableCameraClick: function () {
+  cameraClick: function () {
     this.data.enableCamera = !this.data.enableCamera;
     this.setData({
       enableCamera: this.data.enableCamera
     });
+    console.log("webrtc-room cameraClick");
   }, 
   /**
    * 设置美颜

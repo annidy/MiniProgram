@@ -19,6 +19,7 @@ Page({
     debug: false,
     headerHeight: app.globalData.headerHeight,
     statusBarHeight: app.globalData.statusBarHeight,
+    isStart: true
   },
   onSwitchCameraClick: function () {
     this.data.frontCamera = !this.data.frontCamera;
@@ -26,6 +27,13 @@ Page({
       frontCamera: this.data.frontCamera
     })
     this.data.cameraContext.switchCamera();
+  },
+  cameraClick: function () {
+    this.data.enableCamera = !this.data.enableCamera;
+    this.setData({
+      enableCamera: this.data.enableCamera
+    });
+    console.log("cameraClick");
   },
   onBeautyClick: function () {
     if (this.data.beauty != 0) {
@@ -61,6 +69,16 @@ Page({
       })
     }
   },
+  onClickStart: function() {
+    this.setData({
+      isStart: !this.data.isStart
+    })
+    if (this.data.isStart) {
+      this.data.cameraContext.start();
+    } else {
+      this.data.cameraContext.stop();
+    }
+  },
 
   stop: function () {
     this.setData({
@@ -90,7 +108,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onLoad");
+    console.log("onLoad mode = " + options.mode);
     this.setData({
       mode: options.mode,
       orientation: options.orientation,

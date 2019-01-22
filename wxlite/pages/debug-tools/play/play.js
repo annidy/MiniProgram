@@ -7,7 +7,16 @@ Page({
    */
   data: {
     playing: false,
-    videoContext: {},
+    videoContext1: {},
+    videoContext2: {},
+    newScreen: [{
+        userId: "abc",
+        playUrl: "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4_550.flv"
+      }, {
+        userId: "def",
+        playUrl: "http://1253131631.vod2.myqcloud.com/26f327f9vodgzp1253131631/f4c0c9e49031868222924048326/f0.flv"
+      }
+    ],
 
     fullScreen: false,
     playUrl: "http://5815.liveplay.myqcloud.com/live/5815_89aad37e06ff11e892905cb9018cf0d4_550.flv",
@@ -19,6 +28,7 @@ Page({
     headerHeight: app.globalData.headerHeight,
     statusBarHeight: app.globalData.statusBarHeight,
   },
+
 
   onScanQR: function () {
     this.stop();
@@ -36,33 +46,37 @@ Page({
   },
 
   onPlayClick: function() {
-    var url = this.data.playUrl;
-    if (url.indexOf("rtmp:") == 0) {
-    } else if (url.indexOf("https:") == 0 || url.indexOf("http:") == 0) {
-      if (url.indexOf(".flv") != -1) {
-      }
-    } else {
-      wx.showToast({
-        title: '播放地址不合法，目前仅支持rtmp,flv方式!',
-        icon: 'loading',
-      })
-    }
+    this.stop();
+    this.data.videoContext1.play();
+    this.data.videoContext2.play();
 
-    this.setData({
-      playing: !this.data.playing,
-    })
+    // var url = this.data.playUrl;
+    // if (url.indexOf("rtmp:") == 0) {
+    // } else if (url.indexOf("https:") == 0 || url.indexOf("http:") == 0) {
+    //   if (url.indexOf(".flv") != -1) {
+    //   }
+    // } else {
+    //   wx.showToast({
+    //     title: '播放地址不合法，目前仅支持rtmp,flv方式!',
+    //     icon: 'loading',
+    //   })
+    // }
 
-    if (this.data.playing) {
-      this.data.videoContext.play();
-      console.log("video play()");
-      wx.showLoading({
-        title: '',
-      })
-    } else {
-      this.data.videoContext.stop();
-      console.log("video stop()");
-      wx.hideLoading();
-    }
+    // this.setData({
+    //   playing: !this.data.playing,
+    // })
+
+    // if (this.data.playing) {
+    //   this.data.videoContext.play();
+    //   console.log("video play()");
+    //   wx.showLoading({
+    //     title: '',
+    //   })
+    // } else {
+    //   this.data.videoContext.stop();
+    //   console.log("video stop()");
+    //   wx.hideLoading();
+    // }
   },
 
   onOrientationClick: function() {
@@ -145,25 +159,31 @@ Page({
     })
   },
 
+  onPlayNetStatus:function(e) {
+    console.log("onPlayNetStatus");
+    console.log(e);
+  },
+
   stop: function() {
-    this.setData({
-      playing: false,
-      // playUrl: "rtmp://2157.liveplay.myqcloud.com/live/2157_wx_live_test1",
-      orientation: "vertical",
-      objectFit: "contain",
-      muted: false,
-      fullScreen: false,
-      backgroundMuted: false,
-      debug: false,
-      exterFlag: false,
-    })
-    this.data.videoContext.stop();
-    wx.hideLoading();
+    // this.setData({
+    //   playing: false,
+    //   // playUrl: "rtmp://2157.liveplay.myqcloud.com/live/2157_wx_live_test1",
+    //   orientation: "vertical",
+    //   objectFit: "contain",
+    //   muted: false,
+    //   fullScreen: false,
+    //   backgroundMuted: false,
+    //   debug: false,
+    //   exterFlag: false,
+    // })
+    // this.data.videoContext.stop();
+    // wx.hideLoading();
   },
 
   createContext: function() {
     this.setData({
-      videoContext: wx.createLivePlayerContext("video-livePlayer")
+      videoContext1: wx.createLivePlayerContext("abc"),
+      videoContext2: wx.createLivePlayerContext("def"),
     })
   },
 
@@ -180,7 +200,8 @@ Page({
    */
   onReady: function () {
     this.createContext();
-    console.log(this.data.videoContext);
+    console.log(this.data.videoContext1);
+    console.log(this.data.videoContext2);
 
     wx.setKeepScreenOn({
       keepScreenOn: true,
