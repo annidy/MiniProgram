@@ -13,7 +13,8 @@
     "pages/live-room-demo/roomname/roomname",
     "pages/webrtc-room-demo/room/room",
     "pages/webrtc-room-demo/join-room-by-id/joinRoomById",
-    "pages/debug-tools/rtplay/rtplay"
+    "pages/debug-tools/rtplay/rtplay",
+    "pages/test1/test1"
   ],
   "networkTimeout": {
     "request": 60000

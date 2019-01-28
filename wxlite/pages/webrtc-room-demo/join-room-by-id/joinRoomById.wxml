@@ -30,6 +30,10 @@
     </view>
 
   </view>
+  <label class="switchLabel">
+  <switch checked bindchange="switchVideoChange" /> 摄像头
+  </label>
+
 </view>
 <view class='bottom-btn'> 
   <button type="primary" bindtap="joinRoom" hover-class="none">进入房间</button>

@@ -117,5 +117,13 @@ Page({
       path: '/pages/main/main',
       imageUrl: 'https://mc.qcloudimg.com/static/img/dacf9205fe088ec2fef6f0b781c92510/share.png'
     }
+  },
+
+  onTest1: function() {
+    var toUrl = "../test1/test1"
+    console.log(toUrl);
+    wx.navigateTo({
+      url: toUrl,
+    });
   }
 })

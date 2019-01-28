@@ -13,6 +13,7 @@ Page({
 		tapTime: '',
     template: 'float',
     roomList: [],
+    enableCamera: true,
     headerHeight: app.globalData.headerHeight,
 		statusBarHeight: app.globalData.statusBarHeight,
 		lc : "◀︎"
@@ -30,6 +31,12 @@ Page({
 			template: e.detail.value
 		})
 		console.log('this.data.template', this.data.template)
+  },
+  switchVideoChange: function(e) {
+    this.setData({
+      enableCamera: e.detail.value
+    })
+    console.log('switchVideoChange ', e.detail.value)
   },
 	// 进入rtcroom页面
 	joinRoom: function() {
@@ -82,7 +89,7 @@ Page({
 		// 	roomName : self.data.roomList[roomIndex]['roomName']
 		// })
 
-    var url = '../room/room?type=create&roomID='+self.data.roomNo+'&roomName=' + self.data.roomName + '&template=' + self.data.template + '&userName=' + self.data.userName;
+    var url = '../room/room?type=create&roomID=' + self.data.roomNo + '&roomName=' + self.data.roomName + '&template=' + self.data.template + '&userName=' + self.data.userName + '&enableCamera=' + self.data.enableCamera;
     wx.navigateTo({
 			url: url
 		});

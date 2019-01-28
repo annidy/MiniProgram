@@ -23,6 +23,7 @@
     </view> -->
     <!-- <view class='guide-nomore'></view> -->
   </view>
+  <button bindtap='onTest1'> 测试1 </button>
   <view class='logo-box'>
     <image class='logo' src='../Resources/logo.png'></image>
   </view>

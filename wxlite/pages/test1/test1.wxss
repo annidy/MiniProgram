@@ -1,0 +1,20 @@
+/* wxlite/pages/test1/test1.wxss */
+.intro {
+  text-align: center;
+}
+.pusher {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cover {
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  color: #fff;
+  background-color: #ddd;
+
+  word-break: break-all;
+}

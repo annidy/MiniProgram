@@ -61,3 +61,7 @@
 .PrevImgBox .PrevCell>label>image.selected{
   border:2px solid rgba(150,150,250,0.5);
 }
+
+.switchLabel {
+  color: #ffffff
+}

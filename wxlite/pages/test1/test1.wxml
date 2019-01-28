@@ -1,0 +1,26 @@
+<view class="intro">
+  <view>测试，在Android上，cover-view被native组件所遮挡了，不符合预期</view>
+
+  <!-- <view class='pusher'>
+    <live-pusher url="https://domain/push_stream" mode="RTC" autopush bindstatechange="statechange" style="width: 100vw; height: 100vh;" />
+
+    <cover-view class="cover">
+      测试数据，期望cover-view内容覆盖live-pusher标签，但是在Android上，被native组件覆盖了。不符合预期表现。
+    </cover-view>
+  </view> -->
+  <view class='pusher'>
+     <camera
+  device-position="back"
+  flash="off"
+  binderror="error"
+  style="width: 100%; height: 300px;"
+  ></camera>
+
+    <cover-view class="cover">
+      测试数据，期望cover-view内容覆盖live-pusher标签，但是在Android上，被native组件覆盖了。不符合预期表现。
+    </cover-view>
+  </view>
+  <cover-view class="cover">
+    测试数据，期望cover-view内容覆盖live-pusher标签，但是在Android上，被native组件覆盖了。不符合预期表现。
+  </cover-view>
+</view>

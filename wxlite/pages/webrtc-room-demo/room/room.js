@@ -250,6 +250,7 @@ Page({
     });
     console.log("webrtc-room changeCamera")
   },
+
   cameraClick: function () {
     this.data.enableCamera = !this.data.enableCamera;
     this.setData({
@@ -284,6 +285,7 @@ Page({
     var self = this;
     self.data.webrtcroomComponent.randomLayout();
   },
+
 
   /**
    * 是否显示日志
@@ -444,11 +446,15 @@ Page({
     this.data.roomID = options.roomID || '';
     this.data.username = options.userName;
     this.data.template = options.template;
+    this.data.enableCamera = (options.enableCamera == 'true');
     this.setData({
       roomCreator: options.roomCreator || this.data.userID,
       roomName: options.roomName,
       template: options.template,
+      enableCamera: this.data.enableCamera
     });
+
+    console.log("*** 摄像头 " + (this.data.enableCamera ? "开" : "关") + "options " + options.enableCamera);
     this.joinRoom();
   },
 

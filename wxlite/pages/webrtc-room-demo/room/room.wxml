@@ -48,6 +48,9 @@
           <cover-view class='img-box'>
             <button type="primary" bindtap="reorder" hover-class="none">重排</button>
           </cover-view>
+          <cover-view class='img-box'>
+            <button type="primary" bindtap="cameraClick" hover-class="none">画面</button>
+          </cover-view>
         </cover-view>
         <cover-image class='close' style="top:{{(headerHeight + statusBarHeight) - 26}}rpx" src="/pages/Resources/back.png" bindtap="onBack"></cover-image>
       </cover-view>
